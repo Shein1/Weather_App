@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="TKh-ii-zmj">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Weather App-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="MapViewController" customModule="Weather_App" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pDz-0o-Di9">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                            </mapView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="OSe-6H-lxf">
+                                <rect key="frame" x="0.0" y="64" width="184" height="603"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="menuCell" id="HAE-V1-aos" customClass="CityTableViewCell" customModule="Weather_App" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="184" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="HAE-V1-aos" id="e1u-4B-k6k">
+                                            <rect key="frame" x="0.0" y="0.0" width="184" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Fj-Qh-imK">
+                                                    <rect key="frame" x="31" y="15" width="122" height="14"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="6Fj-Qh-imK" firstAttribute="leading" secondItem="e1u-4B-k6k" secondAttribute="leadingMargin" constant="16" id="G9f-IN-N9p"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="6Fj-Qh-imK" secondAttribute="trailing" constant="16" id="QZv-xB-Y4K"/>
+                                                <constraint firstItem="6Fj-Qh-imK" firstAttribute="top" secondItem="e1u-4B-k6k" secondAttribute="topMargin" constant="4" id="czJ-kk-xTN"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="6Fj-Qh-imK" secondAttribute="bottom" constant="4" id="kiV-8L-OPq"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="cityLabel" destination="6Fj-Qh-imK" id="Cn0-FL-Hb6"/>
+                                            <segue destination="Xtm-ff-m83" kind="show" identifier="fromMenuSegue" id="kJO-TC-Se9"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="pDz-0o-Di9" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="5BU-on-qrv"/>
+                            <constraint firstItem="OSe-6H-lxf" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="72J-5v-l1q"/>
+                            <constraint firstItem="pDz-0o-Di9" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="NpK-eO-kXU"/>
+                            <constraint firstItem="OSe-6H-lxf" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="daV-qq-Nra"/>
+                            <constraint firstItem="pDz-0o-Di9" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="fwi-ij-vnT"/>
+                            <constraint firstItem="OSe-6H-lxf" firstAttribute="trailing" secondItem="pDz-0o-Di9" secondAttribute="trailing" constant="-191" id="h4h-AS-GLz"/>
+                            <constraint firstItem="pDz-0o-Di9" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="hII-CQ-zHo"/>
+                            <constraint firstItem="OSe-6H-lxf" firstAttribute="top" secondItem="pDz-0o-Di9" secondAttribute="top" id="r7V-2f-yfi"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Weather App" id="Rh5-yH-Ocv">
+                        <barButtonItem key="backBarButtonItem" title="Back" id="ebW-YN-Lik"/>
+                        <barButtonItem key="leftBarButtonItem" style="done" systemItem="bookmarks" id="vZW-xd-osd">
+                            <connections>
+                                <action selector="showMenu:" destination="BYZ-38-t0r" id="elP-Jr-sGj"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="mapView" destination="pDz-0o-Di9" id="HWE-nY-sZF"/>
+                        <outlet property="menuTable" destination="OSe-6H-lxf" id="lcH-UV-TAz"/>
+                        <segue destination="Xtm-ff-m83" kind="show" identifier="MapDetailSegue" id="xMl-Dd-4Dk"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="544.79999999999995" y="324.28785607196403"/>
+        </scene>
+        <!--Detail View Controller-->
+        <scene sceneID="aHc-S3-Mnh">
+            <objects>
+                <viewController storyboardIdentifier="DetailViewC" id="Xtm-ff-m83" customClass="DetailViewController" customModule="Weather_App" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="NVD-VF-dFX">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" bounces="NO" bouncesZoom="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="CjR-n3-jDJ">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="CjR-n3-jDJ" firstAttribute="top" secondItem="Ats-c8-HdR" secondAttribute="top" id="MMi-pa-Gtr"/>
+                            <constraint firstItem="Ats-c8-HdR" firstAttribute="bottom" secondItem="CjR-n3-jDJ" secondAttribute="bottom" id="ebs-XA-lkM"/>
+                            <constraint firstItem="CjR-n3-jDJ" firstAttribute="leading" secondItem="Ats-c8-HdR" secondAttribute="leading" id="ewC-H9-Z9l"/>
+                            <constraint firstItem="Ats-c8-HdR" firstAttribute="trailing" secondItem="CjR-n3-jDJ" secondAttribute="trailing" id="zOg-s7-Oxs"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Ats-c8-HdR"/>
+                    </view>
+                    <connections>
+                        <outlet property="tableView" destination="CjR-n3-jDJ" id="RlK-sf-ldS"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Jgw-Gc-cQe" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1437.5999999999999" y="323.38830584707648"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="qcn-3i-rgb">
+            <objects>
+                <navigationController id="TKh-ii-zmj" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="r8x-Kc-IoP">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="1" green="0.69706108320000004" blue="0.0001922522367" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="OiU-VR-3Qi"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="E9A-dk-4eX" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-346" y="324"/>
+        </scene>
+    </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="kJO-TC-Se9"/>
+    </inferredMetricsTieBreakers>
+    <color key="tintColor" red="1" green="0.95633105364619642" blue="0.0085775785464397014" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+</document>
